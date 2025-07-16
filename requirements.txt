@@ -1,0 +1,5 @@
+pinecone
+langchain-community
+langchain-groq
+pandas
+HuggingfaceEmbeddings
