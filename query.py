@@ -3,23 +3,10 @@ import requests
 from dotenv import load_dotenv
 
 load_dotenv()
-GROQ_API_KEY = "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"
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 
 GROQ_URL = "https://api.groq.com/openai/v1/chat/completions"
-MODEL_NAME = "llama3-70b-8192"  # or "mixtral-8x7b-32768", "gemma-7b-it"
-
-# SYSTEM_PROMPT = """
-# You are an expert AI agent that converts natural language into Pinecone metadata filter queries.
-# Use only the following schema fields:
-# - author: string
-# - tags: list
-# - published_year: int
-# - published_month: int (optional)
-# - published_day: int (optional)
-
-# Always return a valid JSON dictionary for filtering.
-# Do not use prose or explanations.
-# """
+MODEL_NAME = "llama3-70b-8192"
 
 SYSTEM_PROMPT = """
 You are a strict JSON generator that converts natural language into a Pinecone-compatible filter query.
